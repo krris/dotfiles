@@ -74,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -84,7 +84,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
 
-export USE_CCACHE=1
-ssh-add -K ~/.ssh/id_rsa
+# Import aliases
+aliasFile="$HOME/.dotfiles/zsh/.alias"
+if [ -f $aliasFile ]; then
+	source $aliasFile
+else
+	print "File not found: $aliasFile."
+fi
 
+# Import environment variables
+envFile="$HOME/.dotfiles/zsh/.environment"
+if [ -f $envFile ]; then
+	source $envFile
+else
+	print "File not found: $envFile."
+fi
+
+# ssh-add -K ~/.ssh/id_rsa

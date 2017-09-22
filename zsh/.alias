@@ -1,0 +1,5 @@
+# Remove Xcode's Derived Data
+alias ddd='rm -rf ~/Library/Developer/Xcode/DerivedData'
+
+# Kill Xcode
+alias xx='pkill Xcode'
