@@ -1,0 +1,11 @@
+[user]
+        name = EXAMPLE
+        email = EXAMPLE@EXAMPLE.com
+[alias]
+        co = checkout
+        ci = commit
+        st = status
+        br = branch
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        type = cat-file -terys
+        dump = cat-file -pmail.com
